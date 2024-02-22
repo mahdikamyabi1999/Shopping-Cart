@@ -1,4 +1,19 @@
+import {useDispatch} from 'react-redux'
+import { addToCart } from '../CartSlice';
+import { removeCart } from '../CartSlice';
+import {useSelector} from 'react-redux';
+
+
 function Producttile({product}) {
+  const {cart} = useSelector(state => state);
+  const dispatch = useDispatch();
+  function handelRemoveCart() {
+    dispatch(removeCart(product.id))
+  }
+  function hnadleAddToCart() {
+    dispatch(addToCart(product))
+  }
+  
   return (
     <div>
       <div className="group flex flex-col items-center border-2 border-red-900 gap-3 p-4 h-[360px] mt-10 ml-5 rounded-xl">
@@ -9,7 +24,7 @@ function Producttile({product}) {
           <h1 className="w-40 truncate mt-3 text-gray-700 font-bold text-lg">{product?.title}</h1>
           </div>
           <div className="flex items-center justify-center w-full mt-5">
-            <button className=" bg-red-950 text-white border-2 rounded-lg font-semibold p-3">Add To Cart</button>
+            <button onClick={cart.some((item) => item.id === product.id ) ? handelRemoveCart : hnadleAddToCart} className=" bg-red-950 text-white border-2 rounded-lg font-semibold p-3">{cart.some(item => item.id === product.id ) ? 'Remove From Cart' : 'Add To Cart'}</button>
           </div>
       </div>
     </div>
