@@ -3,7 +3,7 @@
 ###
 
 <div align="center">
-  <img  src="https://github.com/mahdikamyabi1999/testgit/blob/main/cover.png"  />
+  <img  src="https://github.com/mahdikamyabi1999/Shopping-Cart/blob/main/public/cover.png"  />
 </div>
 
 ###
