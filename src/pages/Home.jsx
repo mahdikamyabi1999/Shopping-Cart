@@ -28,7 +28,7 @@ function Home() {
     fetchListOfProducts();
   }, []);
   return (
-    <div>
+    <div >
       {loading && (
         <div className="min-h-screen w-full flex justify-center items-center">
           <InfinitySpin
